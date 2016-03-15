@@ -9,7 +9,7 @@ loop do
 
   # Client IO gets on flick
   # Important to use chomp here because the string
-  # comes with /n "line break"
+  # comes with /n "new line"
   input = client.gets.chomp
   case input
     when "home"

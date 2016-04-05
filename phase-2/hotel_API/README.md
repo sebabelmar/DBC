@@ -4,15 +4,9 @@ We turned the [Hotel AR Drill](https://github.com/sf-sea-lions-2016/active-recor
 
 ### AR Associations
 
+![alt text](https://raw.githubusercontent.com/sebabelmar/DBC/master/phase-2/hotel_API/pics/Screen%20Shot%202016-04-04%20at%205.27.38%20PM.png)
+
 ### CORS resolved
-
-### JSON requests
-
-### JSON responses
-
-#### Modified Code
-
-
 ##### Gemfile
 ```ruby
 gem "sinatra-cross_origin", "~> 0.3.1"
@@ -27,3 +21,7 @@ configure do
   enable :cross_origin
 end
 ```
+
+### JSON requests
+
+### JSON responses

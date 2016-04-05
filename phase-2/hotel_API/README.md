@@ -2,7 +2,7 @@
 
 We turned the [Hotel AR Drill](https://github.com/sf-sea-lions-2016/active-record-associations-drill-hotels-challenge) into a dummy API.
 
-![](/pics/hotels_schema.png)
+![](https://raw.githubusercontent.com/sebabelmar/DBC/master/phase-2/hotel_API/pics/hotels_schema.png)
 
 ### AR Associations
 

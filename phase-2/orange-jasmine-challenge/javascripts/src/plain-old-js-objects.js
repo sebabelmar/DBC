@@ -2,36 +2,36 @@ FRUIT_BEARING_AGE = 5;
 
 // ### ONE ###
 // POLUTING THIS
-function createTree (){
-	this.age = 0
-	this.height = 0
-	this.oranges = []
-	this.orangeCount = 0
+// function createTree (){
+// 	this.age = 0
+// 	this.height = 0
+// 	this.oranges = []
+// 	this.orangeCount = 0
 
-	this.grow = function(){
-		this.age +=1;
-		this.height += 10;
-		if(this.age >= FRUIT_BEARING_AGE)
-			addOranges()
-	}
+// 	this.grow = function(){
+// 		this.age +=1;
+// 		this.height += 10;
+// 		if(this.age >= FRUIT_BEARING_AGE)
+// 			addOranges()
+// 	}
 
-	this.addOranges = function(){
-		var rand = Math.floor(Math.random() * (10 - 1)) + 1;
+// 	this.addOranges = function(){
+// 		var rand = Math.floor(Math.random() * (10 - 1)) + 1;
 
-		for(var i=0; i<rand; i++){
-			this.oranges.push("Orange")
-		}
+// 		for(var i=0; i<rand; i++){
+// 			this.oranges.push("Orange")
+// 		}
 
-		this.orangeCount += this.oranges.length;
-	}
+// 		this.orangeCount += this.oranges.length;
+// 	}
 
-	this.dropOrange = function(){
-		return this.oranges.pop()
-	}
+// 	this.dropOrange = function(){
+// 		return this.oranges.pop()
+// 	}
 
-	// CRAZY...
-	return self
-}
+// 	// CRAZY...
+// 	return self
+// }
 
 // ### TWO ###
 // Using this as parameter
@@ -73,6 +73,45 @@ function createTree (){
 // 				dropOrange: dropOrange
 // 			}
 // }
+
+// ### TWO.5 ###
+// Using .call(this) to change scopes
+function createTree (){
+	var age = 0
+	var height = 0
+	var oranges = []
+	var orangeCount = 0
+
+	function addOranges(){
+		var rand = Math.floor(Math.random() * (10 - 1)) + 1;
+
+		for(var i=0; i<rand; i++){
+			this.oranges.push("Orange")
+		}
+
+		this.orangeCount += this.oranges.length;
+	}
+
+	var grow = function(){
+		this.age +=1;
+		this.height += 10;
+		if(this.age >= FRUIT_BEARING_AGE)
+		 	addOranges.call(this)
+	}
+
+	var dropOrange = function(){
+		return this.oranges.pop()
+	}
+
+	return 	{
+				age: age,
+				height: height,
+				oranges: oranges,
+				orangeCount: orangeCount,
+				grow: grow,
+				dropOrange: dropOrange
+			}
+}
 
 
 // ### THREE ###
